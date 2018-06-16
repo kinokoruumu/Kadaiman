@@ -1,22 +1,32 @@
-import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import { Font } from "expo";
+
+// router
+import Router from "./router";
+import { View } from "react-native";
 
 export default class App extends React.Component<{}> {
+  state = {
+    fontLoaded: false
+  };
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      "marion-bold": require("./assets/fonts/Marion-Bold.ttf")
+    });
+    this.setState({ fontLoaded: true });
+  }
+
   render() {
+    const { fontLoaded } = this.state;
     return (
-      <View style={styles.container}>
-        <Text>Hello!</Text>
-        <Text>I'm Kadaiman</Text>
+      <View style={{ flex: 1 }}>
+        {
+          fontLoaded ? (
+            <Router/>
+          ) : null
+        }
       </View>
-    );
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
