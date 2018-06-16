@@ -15,8 +15,6 @@ export interface Props {
 
 const ListItemContainer = styled.View`
   padding-bottom: 7px;
-  border-bottom-color: rgba(151, 151, 151, 0.3);
-  border-bottom-width: 1px;
 `;
 
 const LightColorHeadline3 = styled(Headline3)`

@@ -14,7 +14,7 @@ const Router: React.StatelessComponent = () => (
     >
       <Stack key="main">
         <Scene key="home" component={TopPage} title="KADAIMAN"/>
-        <Scene key="detail" component={TaskDetailPage} title="KADAIMAN" initial/>
+        <Scene key="detail" component={TaskDetailPage} title={null}/>
       </Stack>
     </RNRFRouter>
   </View>
