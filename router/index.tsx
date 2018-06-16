@@ -1,10 +1,11 @@
 import * as React from "react";
 import { View, StyleSheet, StatusBar } from "react-native";
-import { Router as RNRFRouter, Stack, Scene } from "react-native-router-flux";
+import { Router as RNRFRouter, Stack, Scene, Modal } from "react-native-router-flux";
 
 // pages
 import TopPage from "../components/pages/Top";
 import TaskDetailPage from "../components/pages/TaskDetail";
+import SubmissionTask from "../components/pages/SubmissionTask";
 
 const Router: React.StatelessComponent = () => (
   <View style={styles.container}>
@@ -12,10 +13,13 @@ const Router: React.StatelessComponent = () => (
       navigationBarStyle={styles.navigationBarStyle}
       titleStyle={styles.titleStyle}
     >
-      <Stack key="main">
-        <Scene key="home" component={TopPage} title="KADAIMAN"/>
-        <Scene key="detail" component={TaskDetailPage} title={null}/>
-      </Stack>
+      <Modal key="modal" hideNavBar>
+        <Stack key="main">
+          <Scene key="home" component={TopPage} title="KADAIMAN"/>
+          <Scene key="detail" component={TaskDetailPage} title={undefined}/>
+        </Stack>
+        <Scene key="submissionTask" component={SubmissionTask}/>
+      </Modal>
     </RNRFRouter>
   </View>
 );

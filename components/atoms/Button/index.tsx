@@ -23,17 +23,17 @@ const ButtonText = styled.Text`
 
 interface Props {
   isFull?: boolean;
-  onClick?: () => void;
+  onPress?: () => void;
 }
 
 const Button: React.StatelessComponent<Props> = ({
   isFull,
   children,
-  onClick
+  onPress
 }) => {
   const Component = isFull ? FullButton : NormalButton
   return (
-    <Component onPress={onClick}>
+    <Component onPress={onPress}>
       <ButtonText>{ children }</ButtonText>
     </Component>
   );
