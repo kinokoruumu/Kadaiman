@@ -1,7 +1,7 @@
 import * as React from "react";
 
 // templates
-import TopPageTemplate from "../../templates/Top";
+import TaskDetailPageTemplate from "../../templates/TaskDetail";
 
 const cards = [
   {
@@ -65,8 +65,8 @@ const tasks = [
   }
 ];
 
-const TopPage: React.StatelessComponent = () => (
-  <TopPageTemplate nearDeadlineTasks={cards} tasks={tasks} />
+const TaskDetailPage: React.StatelessComponent = () => (
+  <TaskDetailPageTemplate nearDeadlineTasks={cards} tasks={tasks} />
 );
 
-export default TopPage;
+export default TaskDetailPage;

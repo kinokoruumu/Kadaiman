@@ -4,6 +4,7 @@ import { Router as RNRFRouter, Stack, Scene } from "react-native-router-flux";
 
 // pages
 import TopPage from "../components/pages/Top";
+import TaskDetailPage from "../components/pages/TaskDetail";
 
 const Router: React.StatelessComponent = () => (
   <View style={styles.container}>
@@ -11,8 +12,9 @@ const Router: React.StatelessComponent = () => (
       navigationBarStyle={styles.navigationBarStyle}
       titleStyle={styles.titleStyle}
     >
-      <Stack key="auth">
-        <Scene key="top" component={TopPage} title="KADAIMAN"/>
+      <Stack key="main">
+        <Scene key="home" component={TopPage} title="KADAIMAN"/>
+        <Scene key="detail" component={TaskDetailPage} title="KADAIMAN" initial/>
       </Stack>
     </RNRFRouter>
   </View>
