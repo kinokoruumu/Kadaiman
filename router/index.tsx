@@ -1,5 +1,6 @@
 import * as React from "react";
-import { View, StyleSheet, StatusBar } from "react-native";
+import { StyleSheet } from "react-native";
+import styled from "styled-components";
 import { Router as RNRFRouter, Stack, Scene, Modal } from "react-native-router-flux";
 
 // pages
@@ -7,8 +8,12 @@ import TopPage from "../components/pages/Top";
 import TaskDetailPage from "../components/pages/TaskDetail";
 import SubmissionTask from "../components/pages/SubmissionTask";
 
+const Container = styled.View`
+  flex: 1;
+`;
+
 const Router: React.StatelessComponent = () => (
-  <View style={styles.container}>
+  <Container>
     <RNRFRouter
       navigationBarStyle={styles.navigationBarStyle}
       titleStyle={styles.titleStyle}
@@ -18,16 +23,13 @@ const Router: React.StatelessComponent = () => (
           <Scene key="home" component={TopPage} title="KADAIMAN"/>
           <Scene key="detail" component={TaskDetailPage} title={undefined}/>
         </Stack>
-        <Scene key="submissionTask" component={SubmissionTask}/>
+        <Scene key="submissionTask" component={SubmissionTask} initial/>
       </Modal>
     </RNRFRouter>
-  </View>
+  </Container>
 );
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
   navigationBarStyle: {
     backgroundColor: "#ffffff"
   },

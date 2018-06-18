@@ -8,11 +8,14 @@ const task = {
   subtitle: "環境構築とかなんとか",
   user: "奥信 将人",
   limit: "5月7日 18時までに",
-  remaining: 2
+  checkList: [
+    "BirthdayReminder.zipを課題サーバーに提出",
+    "先生のチェックを受ける"
+  ]
 };
 
 const SubmissionTaskPage: React.StatelessComponent = () => (
-  <SubmissionTaskPageTemplate />
+  <SubmissionTaskPageTemplate task={task} />
 );
 
 export default SubmissionTaskPage;

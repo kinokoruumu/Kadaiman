@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Image = styled.Image`
   width: 100%;
   height: 119px;
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
 `;
 
 const Container = styled.View`
@@ -70,9 +70,10 @@ export default class SwipeUp extends React.Component<Props> {
 
   render() {
     const wrapperStyle = {
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(0, 0, 0, 0)",
       height: this.state.height
     };
+    // TODO: 背景を透明にする
     return (
       <Animated.View
         {...this._panResponder.panHandlers}
